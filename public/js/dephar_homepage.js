@@ -11,7 +11,7 @@ const pesquisaPrincipios = async (event) => {
     event.preventDefault()
     const name = searchInput.value.trim();
     try{
-    const pesquisa = await axios.get(`http://localhost:3000/api/v1/dephar/?nome=${name}`);
+    const pesquisa = await axios.get(`/api/v1/dephar/?nome=${name}`);
     const principios = pesquisa.data.principio;
     containerPrincipio.innerHTML = "";
     if(principios.length === 0){
@@ -72,7 +72,7 @@ const erroBusca = (error) => {
 
 const start = async () => {
 try{
-const pesquisaInicial = await axios.get("http://localhost:3000/api/v1/dephar");
+const pesquisaInicial = await axios.get("/api/v1/dephar");
 const principios = pesquisaInicial.data.principio // Pego os dados da response do get
 
 if(principios.length === 0){

@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const id = params.get("id");
     if(id){
         try {
-            const pesquisa = await axios.get(`http://localhost:3000/api/v1/dephar/${id}`);
+            const pesquisa = await axios.get(`/api/v1/dephar/${id}`);
             const principio = pesquisa.data.principio;
             nomePrincipio.innerText = principio.nome;
             formulaMolecular.innerText = principio.formula;
